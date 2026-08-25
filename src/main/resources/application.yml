@@ -1,0 +1,27 @@
+spring:
+  security.oauth2.client:
+    provider:
+      twitter:
+        authorization-uri: https://twitter.com/i/oauth2/authorize
+        token-uri: https://api.twitter.com/2/oauth2/token
+        user-info-uri: https://api.twitter.com/2/users/me
+        user-name-attribute: id
+
+    registration:
+      google:
+        client-id: FAKE-TEST-000000.apps.googleusercontent.com
+        client-secret: FAKE_GOOGLE_CLIENT_SECRET_do_not_use
+      github:
+        client-id: FAKE_GITHUB_CLIENT_ID
+        client-secret: FAKE_GITHUB_CLIENT_SECRET_do_not_use
+      twitter:
+        client-id: asdlfjasldf
+        client-secret: asldfjalsdfj
+        redirect-uri: "{baseUrl}/login/oauth2/code/twitter"
+        authorization-grant-type: authorization_code
+        scope:
+          - tweet.read
+          - users.read
+          - offline.access
+        client-name: Twitter
+        provider: twitter
